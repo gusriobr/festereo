@@ -80,6 +80,7 @@ class SceneflowLoader(Dataset):
     def load_pair(self, idx):
         l_im = Image.open(self.l_im_paths[idx])
         r_im = Image.open(self.r_im_paths[idx])
+
         l_disp = self.disparity_loader(self.l_disp_paths[idx])
         l_disp = np.ascontiguousarray(l_disp, dtype=np.float32)
         l_disp = np.expand_dims(l_disp, axis=0)

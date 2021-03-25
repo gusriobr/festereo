@@ -1,0 +1,143 @@
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+2021-03-20 14:17:44,026 [    561]   WARN - llij.ide.plugins.PluginManager - Resource bundle redefinition for plugin 'com.jetbrains.pycharm.community.customization'. Old value: messages.ActionsBundle, new value: messages.PyBundle 
+2021-03-20 14:17:44,757 [   1292]   WARN - nSystem.impl.ActionManagerImpl - keymap "Visual Studio" not found [Plugin: com.intellij] 
+2021-03-20 14:17:44,766 [   1301]   WARN - nSystem.impl.ActionManagerImpl - keymap "NetBeans 6.5" not found [Plugin: com.intellij] 
+2021-03-20 14:17:44,767 [   1302]   WARN - nSystem.impl.ActionManagerImpl - keymap "Visual Studio" not found [Plugin: com.intellij] 
+2021-03-20 14:17:44,811 [   1346]   WARN - nSystem.impl.ActionManagerImpl - keymap "NetBeans 6.5" not found [Plugin: PythonCore] 
+Inconsistency detected by ld.so: ../elf/dl-tls.c: 481: _dl_allocate_tls_init: Assertion `listp->slotinfo[cnt].gen <= GL(dl_tls_generation)' failed!
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+2021-03-20 17:49:16,185 [    567]   WARN - llij.ide.plugins.PluginManager - Resource bundle redefinition for plugin 'com.jetbrains.pycharm.community.customization'. Old value: messages.ActionsBundle, new value: messages.PyBundle 
+2021-03-20 17:49:17,150 [   1532]   WARN - nSystem.impl.ActionManagerImpl - keymap "Visual Studio" not found [Plugin: com.intellij] 
+2021-03-20 17:49:17,156 [   1538]   WARN - nSystem.impl.ActionManagerImpl - keymap "NetBeans 6.5" not found [Plugin: com.intellij] 
+2021-03-20 17:49:17,156 [   1538]   WARN - nSystem.impl.ActionManagerImpl - keymap "Visual Studio" not found [Plugin: com.intellij] 
+2021-03-20 17:49:17,227 [   1609]   WARN - nSystem.impl.ActionManagerImpl - keymap "NetBeans 6.5" not found [Plugin: PythonCore] 
+2021-03-20 17:49:26,091 [  10473]   WARN - ns.python.sdk.PythonSdkUpdater - Update for SDK Python 3.6 (jetson): null (/home/gus/workspaces/wpy/venvs/jetson/bin/python) failed 
+com.jetbrains.python.sdk.InvalidSdkException: Failed to determine Python's sys.path value:
+STDOUT: 
+STDERR: 
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPathsFromScript(PythonSdkType.java:457)
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPath(PythonSdkType.java:439)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.evaluateSysPath(PythonSdkUpdater.java:576)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.getLocalSdkPaths(PythonSdkUpdater.java:436)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkPaths(PythonSdkUpdater.java:400)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkVersionAndPaths(PythonSdkUpdater.java:370)
+	at com.jetbrains.python.sdk.PythonSdkUpdater$PyUpdateSdkTask.run(PythonSdkUpdater.java:141)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:962)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:472)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:235)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:178)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:658)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:610)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:65)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:165)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:235)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-20 17:49:45,802 [  30184]   WARN - ckaging.InstalledPackagesPanel - com.intellij.execution.ExecutionException: Cannot start process, the working directory '/home/gus/workspaces/wpy/venvs/jetson/bin' does not exist 
+2021-03-20 17:49:59,053 [  43435]   WARN - ckaging.InstalledPackagesPanel - com.intellij.execution.ExecutionException: Cannot start process, the working directory '/home/gus/workspaces/wpy/venvs/jetson/bin' does not exist 
+2021-03-20 17:50:23,016 [  67398]   WARN - ns.python.sdk.PythonSdkUpdater - Error while evaluating path and version:  
+com.jetbrains.python.sdk.InvalidSdkException: Failed to determine Python's sys.path value:
+STDOUT: 
+STDERR: 
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPathsFromScript(PythonSdkType.java:457)
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPath(PythonSdkType.java:439)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.evaluateSysPath(PythonSdkUpdater.java:576)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.getLocalSdkPaths(PythonSdkUpdater.java:436)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkPaths(PythonSdkUpdater.java:400)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkVersionAndPaths(PythonSdkUpdater.java:370)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.lambda$updateVersionAndPathsSynchronouslyAndScheduleRemaining$0(PythonSdkUpdater.java:267)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$1.run(CoreProgressManager.java:275)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:962)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$4.run(CoreProgressManager.java:520)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$new$0(ProgressRunner.java:79)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:235)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:178)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:658)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:610)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:65)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:165)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:235)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-20 17:50:24,340 [  68722]   WARN - ckaging.InstalledPackagesPanel - com.intellij.execution.ExecutionException: Cannot start process, the working directory '/media/workspace/wpy/venvs/jetson/bin' does not exist 
+2021-03-20 17:51:02,978 [ 107360]   WARN - ns.python.sdk.PythonSdkUpdater - Update for SDK Python 3.6 (jetson): null (/media/workspace/wpy/venvs/jetson/bin/python) failed 
+com.jetbrains.python.sdk.InvalidSdkException: Failed to determine Python's sys.path value:
+STDOUT: 
+STDERR: 
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPathsFromScript(PythonSdkType.java:457)
+	at com.jetbrains.python.sdk.PythonSdkType.getSysPath(PythonSdkType.java:439)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.evaluateSysPath(PythonSdkUpdater.java:576)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.getLocalSdkPaths(PythonSdkUpdater.java:436)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkPaths(PythonSdkUpdater.java:400)
+	at com.jetbrains.python.sdk.PythonSdkUpdater.updateLocalSdkVersionAndPaths(PythonSdkUpdater.java:370)
+	at com.jetbrains.python.sdk.PythonSdkUpdater$PyUpdateSdkTask.run(PythonSdkUpdater.java:141)
+	at com.intellij.openapi.progress.impl.CoreProgressManager$TaskRunnable.run(CoreProgressManager.java:962)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcessWithProgressAsync$5(CoreProgressManager.java:472)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$3(ProgressRunner.java:235)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.lambda$runProcess$2(CoreProgressManager.java:178)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:658)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:610)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:65)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcess(CoreProgressManager.java:165)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$submit$4(ProgressRunner.java:235)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1700)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-20 17:51:06,398 [ 110780]   WARN - ckaging.InstalledPackagesPanel - Cannot fetch the latest version of the installed package pkg-resources 
+com.intellij.util.io.HttpRequests$HttpStatusException: Request failed with status code 404. Status=404, Url=https://pypi.python.org/pypi/pkg-resources/json
+	at com.intellij.util.io.HttpRequests.throwHttpStatusError(HttpRequests.java:671)
+	at com.intellij.util.io.HttpRequests.openConnection(HttpRequests.java:649)
+	at com.intellij.util.io.HttpRequests$RequestImpl.getConnection(HttpRequests.java:381)
+	at com.intellij.util.io.HttpRequests$RequestImpl.getInputStream(HttpRequests.java:390)
+	at com.intellij.util.io.HttpRequests$RequestImpl.getReader(HttpRequests.java:425)
+	at com.intellij.util.io.HttpRequests$RequestImpl.getReader(HttpRequests.java:418)
+	at com.jetbrains.python.packaging.PyPIPackageUtil$3.lambda$load$0(PyPIPackageUtil.java:103)
+	at com.intellij.util.io.HttpRequests.doProcess(HttpRequests.java:541)
+	at com.intellij.util.io.HttpRequests.process(HttpRequests.java:523)
+	at com.intellij.util.io.HttpRequests$RequestBuilderImpl.connect(HttpRequests.java:355)
+	at com.jetbrains.python.packaging.PyPIPackageUtil$3.load(PyPIPackageUtil.java:103)
+	at com.jetbrains.python.packaging.PyPIPackageUtil$3.load(PyPIPackageUtil.java:97)
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3529)
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2278)
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2155)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2045)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3951)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3974)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4958)
+	at com.jetbrains.python.packaging.PyPIPackageUtil.getCachedValueOrRethrowIO(PyPIPackageUtil.java:222)
+	at com.jetbrains.python.packaging.PyPIPackageUtil.refreshAndGetPackageDetailsFromPyPI(PyPIPackageUtil.java:169)
+	at com.jetbrains.python.packaging.PyPIPackageUtil.getPackageVersionsFromPyPI(PyPIPackageUtil.java:196)
+	at com.jetbrains.python.packaging.PyPIPackageUtil.getLatestPackageVersionFromPyPI(PyPIPackageUtil.java:205)
+	at com.jetbrains.python.packaging.PyPIPackageUtil.fetchLatestPackageVersion(PyPIPackageUtil.java:241)
+	at com.jetbrains.python.packaging.ui.PyPackageManagementService.lambda$fetchLatestVersion$1(PyPackageManagementService.java:391)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.doRun(BoundedTaskExecutor.java:216)
+	at com.intellij.util.concurrency.BoundedTaskExecutor.access$200(BoundedTaskExecutor.java:27)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.execute(BoundedTaskExecutor.java:195)
+	at com.intellij.util.ConcurrencyUtil.runUnderThreadName(ConcurrencyUtil.java:208)
+	at com.intellij.util.concurrency.BoundedTaskExecutor$1.run(BoundedTaskExecutor.java:184)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:668)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1$1.run(Executors.java:665)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.util.concurrent.Executors$PrivilegedThreadFactory$1.run(Executors.java:665)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-03-20 17:51:07,659 [ 112041]   WARN - com.intellij.util.xmlb.Binding - no accessors for com.jetbrains.python.packaging.PyCondaPackageService 
+shutdown on Thread[AWT-EventQueue-0,6,Idea Thread Group]

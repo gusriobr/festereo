@@ -1,3 +1,7 @@
+from collections import namedtuple
+
+import torch
+
 from utils.cli.base import CLIBase
 from argparse import Namespace
 from pl_template import FEStereo
@@ -14,12 +18,23 @@ class TrainTestManager(CLIBase):
     model_name = 'festero'
 
     def __init__(self, hparams):
+        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+        check_point = torch.load("/media/workspace/wpy/festereo/model/sceneflow_ckpt_epoch_19.ckpt",
+                                 map_location=torch.device('cpu'))
+        # print(states_dict)
+        check_point["hparams"]["datasets_path"] = "/media/data/datasets/depth/Sampler"
+        hparams = namedtuple("Object", " ".join(list(check_point["hparams"].keys())))(*check_point["hparams"].values())
+
         model = FEStereo(hparams)
+        model()
+
         super().__init__(model, self.model_name, hparams)
 
 
 @click.group()
 def cli():
+    festereo_train()
     pass
 
 
@@ -51,6 +66,11 @@ def cli():
 @click.option('--save_top_k', default=1, help='Save best k models')
 @click.option('--pretrained', default='', help='Pretrained weights path')
 def festereo_train(**args):
+    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
+    # check_point = torch.load("/media/workspace/wpy/festereo/model/sceneflow_ckpt_epoch_19.ckpt", map_location=torch.device('cpu'))
+
+
     hparams = Namespace(**args)
 
     ttmanager = TrainTestManager(hparams=hparams)
@@ -59,4 +79,5 @@ def festereo_train(**args):
 
 
 if __name__ == "__main__":
-    cli()
+    festereo_train()
+    # cli()

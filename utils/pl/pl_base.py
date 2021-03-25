@@ -20,7 +20,7 @@ class PLBase(pl.LightningModule):
         super().__init__()
         seed_everything(hparams.seed)
         self.hparams = hparams
-        self.prepare_datasets()
+        # self.prepare_datasets()
 
     # -------------------------------------------------------------------
     # Get torchvision transform for the dataset

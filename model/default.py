@@ -11,14 +11,14 @@ import click
 from utils.torch_timer import TorchTimer
 try:
     from cost_volume import cost_volume
-except e:
+except:
     pass
 
 
 class disparityregression(nn.Module):
     def __init__(self, start, end, stride=1, dtype=torch.float32):
         super(disparityregression, self).__init__()
-        self.disp = torch.arange(start * stride, end * stride, stride, out=torch.FloatTensor()).view(1, -1, 1, 1).cuda()
+        self.disp = torch.arange(start * stride, end * stride, stride, out=torch.FloatTensor()).view(1, -1, 1, 1) #.cuda()
         if dtype == torch.half:
             self.disp = self.disp.half()
 
@@ -118,9 +118,9 @@ class DefaultModel(nn.Module):
 
     def build_cost_volume(self, feat_l, feat_r, stride=1):
         if feat_l.dtype == torch.float32:
-            cost = torch.zeros(feat_l.size()[0], self.max_disp // stride, feat_l.size()[2], feat_l.size()[3]).cuda()
+            cost = torch.zeros(feat_l.size()[0], self.max_disp // stride, feat_l.size()[2], feat_l.size()[3]) #.cuda()
         else:
-            cost = torch.zeros(feat_l.size()[0], self.max_disp // stride, feat_l.size()[2], feat_l.size()[3]).cuda().half()
+            cost = torch.zeros(feat_l.size()[0], self.max_disp // stride, feat_l.size()[2], feat_l.size()[3])#.cuda().half()
 
         for i in range(0, self.max_disp, stride):
             cost[:, i // stride, :, :i] = feat_l[:, :, :, :i].abs().sum(1)
@@ -172,10 +172,10 @@ class DefaultModel(nn.Module):
 @click.option('--fp16/--no-fp16', default=False, help='fp16')
 def main(benchmark, tensorrt, fp16):
     # Print summary
-    fsa = DefaultModel(max_disp=192, cuda_kernel=False).cuda()
+    fsa = DefaultModel(max_disp=192, cuda_kernel=False) #.cuda()
     summary(fsa, [(3, 368, 1218), (3, 368, 1218)])
     if benchmark:
-        fsa = DefaultModel(max_disp=192, cuda_kernel=True).cuda()
+        fsa = DefaultModel(max_disp=192, cuda_kernel=True) #.cuda()
         #from cost_volume import cost_volume
         #fsa.build_cost_volume = cost_volume
 
@@ -192,8 +192,8 @@ def main(benchmark, tensorrt, fp16):
                                         transforms.Normalize(mean, std)])
 
         left, right = torch.rand((3, 368, 1218)), torch.rand((3, 368, 1218)) 
-        left = left.unsqueeze(0).cuda()
-        right = right.unsqueeze(0).cuda()
+        left = left.unsqueeze(0) #.cuda()
+        right = right.unsqueeze(0) #.cuda()
         left_and_right = torch.cat((left, right), 0)
 
         if fp16:
