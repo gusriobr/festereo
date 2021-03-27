@@ -1,6 +1,7 @@
 import os
+import sys
 from collections import namedtuple
-from random import random, randint
+from random import randint
 
 import torch
 from PIL import Image
@@ -57,18 +58,28 @@ def predict(base_folder, img_name):
 
 
 if __name__ == '__main__':
-    # torch.zeros(1).cuda()
-    os.environ["CUDA_VISIBLE_DEVICES"] = ""
+    use_gpu = False
+    if len(sys.argv) > 1:
+        use_gpu = True
 
-    check_point = torch.load("/media/workspace/wpy/festereo/model/sceneflow_ckpt_epoch_19.ckpt",
-                             map_location=torch.device('cpu'))
+    if not use_gpu:
+        os.environ["CUDA_VISIBLE_DEVICES"] = ""
+        check_point = torch.load("model/sceneflow_ckpt_epoch_19.ckpt", map_location=torch.device('cpu'))
+        print("Using CPU")
+    else:
+        check_point = torch.load("model/sceneflow_ckpt_epoch_19.ckpt")
+        print("Using GPU")
+
     # print(states_dict)
-    check_point["hparams"]["datasets_path"] = "/media/data/datasets/depth/Sampler"
+    DATASET_BASE = "/media/data/datasets/depth/Sampler"
+
+    check_point["hparams"]["datasets_path"] = DATASET_BASE
     hparams = namedtuple("Object", " ".join(list(check_point["hparams"].keys())))(*check_point["hparams"].values())
     model = FEStereo(hparams)
 
     model.load_state_dict(check_point["state_dict"])
-    base_folder = '/media/data/datasets/depth/Sampler/sceneflow/monkaa/RGB_cleanpass/'
-
-    for img_name in ['0048.png', '0049.png', '0050.png']:
-        predict(base_folder, img_name)
+    for fd in ['sceneflow/monkaa/RGB_cleanpass/', 'FlyingThings3D/RGB_cleanpass/', 'Driving/RGB_cleanpass/']:
+        base_folder = os.path.join(DATASET_BASE, fd)
+        lst_imgs = os.listdir(os.path.join(base_folder,'left'))
+        for img_name in lst_imgs:
+            predict(base_folder, img_name)
